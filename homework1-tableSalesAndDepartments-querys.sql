@@ -90,13 +90,10 @@ GROUP BY product
 ORDER BY total_vendido DESC
 LIMIT 3;
 
---8) Mostrar los 3 productos con mayor cantidad total vendida (SUM(quantity))
-SELECT product, SUM(quantity) AS total_vendido
+--8) Mostrar todas las ventas realizadas después del 12 de julio de 2023
+SELECT *
 FROM sales
-GROUP BY product
-ORDER BY total_vendido DESC
-LIMIT 3;
-
+WHERE sale_date > '2023-07-12';
 
 --9) Mostrar la categoría y el ingreso total, pero solo para categorías con ingreso > 50
 SELECT category, SUM(price * quantity) AS total_ingreso
